@@ -1,6 +1,6 @@
 {
   "name": "LB PowerShell Dev Container",
-  "image": "ghcr.io/lbonjean/devcontainer:staging",
+  "image": "ghcr.io/lbonjean/devcontainer:stable",
   "runArgs": [
     "--pull=always"
   ],
