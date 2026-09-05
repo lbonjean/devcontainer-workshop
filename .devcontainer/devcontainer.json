@@ -1,9 +1,18 @@
 {
   "name": "LB PowerShell Dev Container",
-  "image": "ghcr.io/lbonjean/devcontainer:latest",
+  "image": "ghcr.io/lbonjean/devcontainer:staging",
   "runArgs": [
     "--pull=always"
   ],
+
+// "features": {
+//     "ghcr.io/iambipinpaul/devcontainer-features/oh-my-posh:1": {
+//     "installForBash": false,
+//     "installForZsh": false,
+//     "installForPwsh": true
+//   }
+// },
+
   "remoteUser": "vscode",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
   "workspaceFolder": "/workspace",
@@ -18,10 +27,15 @@
       },
       "extensions": [
         "ms-vscode.powershell",
-        "redhat.vscode-yaml",
-        "ms-vscode.vscode-github-actions",
-        "esbenp.prettier-vscode",
+        "ms-azuretools.vscode-azurefunctions",
+        "ms-azuretools.vscode-azurestorage",
+        "ms-azuretools.vscode-docker",
+        "ms-azuretools.vscode-azure-github-copilot",
+        "azurite.azurite",
         "ms-azuretools.vscode-bicep",
+        "davidanson.vscode-markdownlint",
+        "esbenp.prettier-vscode",
+        "mechatroner.rainbow-csv",
         "openai.chatgpt"
       ]
     }
