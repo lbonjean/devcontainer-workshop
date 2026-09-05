@@ -5,14 +5,6 @@
     "--pull=always"
   ],
 
-// "features": {
-//     "ghcr.io/iambipinpaul/devcontainer-features/oh-my-posh:1": {
-//     "installForBash": false,
-//     "installForZsh": false,
-//     "installForPwsh": true
-//   }
-// },
-
   "remoteUser": "vscode",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
   "workspaceFolder": "/workspace",
