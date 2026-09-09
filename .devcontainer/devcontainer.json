@@ -1,6 +1,6 @@
 {
   "name": "LB PowerShell Dev Container",
-  "image": "ghcr.io/lbonjean/devcontainer:latest",
+  "image": "ghcr.io/lbonjean/devcontainer:stable",
   "runArgs": [
     "--pull=always"
   ],
@@ -19,10 +19,17 @@
       "extensions": [
         "ms-vscode.powershell",
         "redhat.vscode-yaml",
-        "ms-vscode.vscode-github-actions",
         "esbenp.prettier-vscode",
         "ms-azuretools.vscode-bicep",
-        "openai.chatgpt"
+        "ms-azuretools.vscode-azure-github-copilot",
+        "ms-azuretools.vscode-azurefunctions",
+        "ms-azuretools.vscode-azurestorage",
+        "azurite.azurite",
+        "ms-azuretools.vscode-azure-github-copilot",
+        "davidanson.vscode-markdownlint",
+        "openai.chatgpt",
+        "nthropic.claude-code",
+        "github.copilot-chat"
       ]
     }
   }
