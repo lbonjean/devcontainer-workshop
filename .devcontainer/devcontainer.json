@@ -28,7 +28,7 @@
         "ms-azuretools.vscode-azure-github-copilot",
         "davidanson.vscode-markdownlint",
         "openai.chatgpt",
-        "nthropic.claude-code",
+        "anthropic.claude-code",
         "github.copilot-chat"
       ]
     }
