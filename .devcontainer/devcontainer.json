@@ -6,8 +6,8 @@
     "--security-opt=seccomp=unconfined"
   ],
   "remoteUser": "vscode",
-  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
-  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/${localWorkspaceFolderBasename},type=bind",
+  "workspaceFolder": "/${localWorkspaceFolderBasename}",
   "mounts": [
     "source=${localWorkspaceFolderBasename}-history,target=/commandhistory,type=volume",
     "source=${localWorkspaceFolderBasename}-codex,target=/home/vscode/.codex,type=volume"
