@@ -1,22 +1,40 @@
 {
   "name": "${localWorkspaceFolderBasename}",
-  "image": "ghcr.io/lbonjean/devcontainer:branch-ubuntu2404",
+  "image":	"ghcr.io/lbonjean/devcontainer:2026.11.24.01",
+
   "runArgs": [
     // required for bubblewrap (bwrap) sandboxes to work correctly
     "--security-opt=seccomp=unconfined"
   ],
+  
+  // "postCreateCommand": "pwsh -NoProfile -File scripts/setup.ps1",
+   "features": {
+    "ghcr.io/va-h/devcontainers-features/uv:1": {},
+    "ghcr.io/lbonjean/devcontainer/powershell-modules:latest": {
+      "modules": "ImportExcel"
+    },
+
+    "ghcr.io/lbonjean/devcontainer/npm-global-packages:latest": {
+      "packages": "@openai/codex,@fission-ai/openspec@latest"
+    }
+  },
   "remoteUser": "vscode",
   "workspaceMount": "source=${localWorkspaceFolder},target=/${localWorkspaceFolderBasename},type=bind",
   "workspaceFolder": "/${localWorkspaceFolderBasename}",
+  // apart volume for command history, so that it is not lost when the container is rebuilt, in combination with pwsh settings to set the history path to /commandhistory
   "mounts": [
-    "source=${localWorkspaceFolderBasename}-history,target=/commandhistory,type=volume",
-    "source=${localWorkspaceFolderBasename}-codex,target=/home/vscode/.codex,type=volume"
+    "source=${localWorkspaceFolderBasename}-home,target=/home/vscode,type=volume"
   ],
   "customizations": {
+    // Configure properties specific to VS Code.
     "vscode": {
+      // Set *default* container specific settings.json values on container create.
       "settings": {
-        "terminal.integrated.defaultProfile.linux": "pwsh"
+        "terminal.integrated.defaultProfile.linux": "pwsh",
+        "remote.restoreForwardedPorts": false
       },
+
+      // Add the IDs of extensions you want installed when the container is created.
       "extensions": [
         "ms-vscode.powershell",
         "redhat.vscode-yaml",
@@ -27,9 +45,8 @@
         "ms-azuretools.vscode-azurestorage",
         "azurite.azurite",
         "ms-azuretools.vscode-azure-github-copilot",
-        "davidanson.vscode-markdownlint",
-        "openai.chatgpt",
-        "anthropic.claude-code",
+//        "davidanson.vscode-markdownlint",
+//        "openai.chatgpt",
         "github.copilot-chat"
       ]
     }
